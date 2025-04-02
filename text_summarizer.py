@@ -1,3 +1,24 @@
+import nltk
+
+# Download required NLTK data
+try:
+    nltk.data.find('tokenizers/punkt')
+    nltk.data.find('corpora/stopwords')
+    nltk.data.find('corpora/wordnet')
+    nltk.data.find('taggers/averaged_perceptron_tagger')
+    nltk.data.find('sentiment/vader_lexicon')
+except LookupError:
+    nltk.download('punkt')
+    nltk.download('stopwords')
+    nltk.download('wordnet')
+    nltk.download('averaged_perceptron_tagger')
+    nltk.download('vader_lexicon')
+
+# Rest of your imports...
+from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+# ... rest of your file
 import streamlit as st
 import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
